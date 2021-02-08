@@ -27,4 +27,5 @@ jobs:
         curl ifconfig.co
         #ip a
         curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
-        ls -la /home/runner/yandex-cloud
+        ls -la /home/runner/yandex-cloud/bin
+        /home/runner/yandex-cloud/bin/yc version
