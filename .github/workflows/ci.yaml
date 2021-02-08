@@ -15,6 +15,7 @@ jobs:
   yc_config:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - run: |
         #echo "Hello ${{ github.event.inputs.name }}!"
         #echo "- in ${{ github.event.inputs.home }}!"
@@ -26,7 +27,8 @@ jobs:
         #whoami
         curl ifconfig.co
         #ip a
+        ls -la
         curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
         #ls -la /home/runner/yandex-cloud/bin
         /home/runner/yandex-cloud/bin/yc version
-        cat /home/runner/yandex-cloud/bin/docker-credential
+    - run: sh ./build.sh
