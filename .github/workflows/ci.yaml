@@ -31,4 +31,4 @@ jobs:
         curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
         #ls -la /home/runner/yandex-cloud/bin
         /home/runner/yandex-cloud/bin/yc version
-    - run: sh ./build.sh
+    - run: bash ./build.sh
