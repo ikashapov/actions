@@ -6,10 +6,10 @@ on:
         description: 'Person to greet'
         required: true
         default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
+      #home:
+      #  description: 'location'
+      #  required: false
+      #  default: 'The Octoverse'
 
 jobs:
   say_hello:
@@ -17,10 +17,15 @@ jobs:
     steps:
     - run: |
         echo "Hello ${{ github.event.inputs.name }}!"
-        echo "- in ${{ github.event.inputs.home }}!"
+        #echo "- in ${{ github.event.inputs.home }}!"
+        echo "docker version"
         docker version
+        echo "docker-compose version"
         docker-compose version
         pwd
-        whoami
+        #whoami
         curl ifconfig.co
-        ip a
+        #ip a
+        curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
+        ls -la /home/runner/work/actions/actions
+        ls -la /home/runner/
