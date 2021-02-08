@@ -12,7 +12,7 @@ on:
       #  default: 'The Octoverse'
 
 jobs:
-  say_hello:
+  yc_config:
     runs-on: ubuntu-latest
     steps:
     - run: |
@@ -29,4 +29,4 @@ jobs:
         curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
         #ls -la /home/runner/yandex-cloud/bin
         /home/runner/yandex-cloud/bin/yc version
-        cat /home/runner/yandex-cloud/bin/docker-credential-yc
+        cat /home/runner/yandex-cloud/bin/docker-credential
