@@ -18,3 +18,9 @@ jobs:
     - run: |
         echo "Hello ${{ github.event.inputs.name }}!"
         echo "- in ${{ github.event.inputs.home }}!"
+        docker version
+        docker-compose version
+        pwd
+        whoami
+        curl ifconfig.co
+        ip a
