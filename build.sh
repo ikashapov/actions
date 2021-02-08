@@ -17,5 +17,4 @@ set -o errexit
 
 # cd to folder with bash script
 cd "$(dirname "${BASH_SOURCE[0]}")"
-
 ls -la
