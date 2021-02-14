@@ -20,3 +20,4 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 ls -la
 echo ${CI}
 echo ${DOCKER_URL}
+env

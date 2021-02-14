@@ -41,7 +41,8 @@ jobs:
         /home/runner/yandex-cloud/bin/yc version
         echo ${DOCKER_URL}
         echo ${CI}
-        echo ${{ secrets.PG_PASSWORD }}
+        echo ${{ stage.secrets.PG_PASSWORD }}
+        env
 
     - name: Step 3 build
       run: bash ./build.sh
