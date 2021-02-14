@@ -11,12 +11,18 @@ on:
       #  required: false
       #  default: 'The Octoverse'
 
+env:
+  DOCKER_URL: some.docker.url
+  #DOCKER_IMAGE: ${{env.DOCKER_URL}}/some-namespace/some-image
+        
+
 jobs:
   yc_config:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: |
+    - name: Step 1 yc
+      uses: actions/checkout@v2
+      run: |
         #echo "Hello ${{ github.event.inputs.name }}!"
         #echo "- in ${{ github.event.inputs.home }}!"
         #echo "docker version"
@@ -31,14 +37,20 @@ jobs:
         curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
         #ls -la /home/runner/yandex-cloud/bin
         /home/runner/yandex-cloud/bin/yc version
-    - run: bash ./build.sh
-  coverage:
+        echo ${DOCKER_URL}
+        echo ${CI}
+        echo ${{ secrets.PG_PASSWORD }}
+
+    - name: Step 2 build
+      run: bash ./build.sh
+
+  #coverage:
     #needs: test
-    runs-on: ubuntu-latest
-    name: "Code coverage"
-    steps:
-      - name: 'Coveralls Finished'
-        uses: coverallsapp/github-action@v1.1.2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel-finished: true
+    #runs-on: ubuntu-latest
+    #name: "Code coverage"
+    #steps:
+      #- name: 'Coveralls Finished'
+      #  uses: coverallsapp/github-action@v1.1.2
+      #  with:
+      #    github-token: ${{ secrets.GITHUB_TOKEN }}
+      #    parallel-finished: true
