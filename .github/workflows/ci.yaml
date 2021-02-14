@@ -41,10 +41,11 @@ jobs:
         /home/runner/yandex-cloud/bin/yc version
         echo ${DOCKER_URL}
         echo ${CI}
-        echo ${secrets.PG}
-        echo ${secrets.prod.PG}
-        echo ${secrets.stage.PG}
-        echo ${secrets.DOCKER_URL}
+        echo ${{ secrets.PG }} >> /1.txt
+        echo ${{ secrets.prod.PG }} >> /1.txt
+        echo ${{ secrets.stage.PG }} >> /1.txt
+        echo ${{ secrets.DOCKER_URL }} >> /1.txt
+        cat /1.txt
         #env
 
     - name: Step 3 build
