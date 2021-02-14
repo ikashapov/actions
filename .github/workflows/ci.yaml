@@ -46,6 +46,7 @@ jobs:
         echo ${{ secrets.stage.PG }} >> /home/runner/1.txt
         echo ${{ secrets.DOCKER_URL }} >> /home/runner/1.txt
         cat /home/runner/1.txt
+        ls -la /home/runner/
         #env
 
     - name: Step 3 build
