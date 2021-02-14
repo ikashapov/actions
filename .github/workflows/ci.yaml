@@ -32,3 +32,13 @@ jobs:
         #ls -la /home/runner/yandex-cloud/bin
         /home/runner/yandex-cloud/bin/yc version
     - run: bash ./build.sh
+  coverage:
+    #needs: test
+    runs-on: ubuntu-latest
+    name: "Code coverage"
+    steps:
+      - name: 'Coveralls Finished'
+        uses: coverallsapp/github-action@v1.1.2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
