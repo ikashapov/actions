@@ -20,4 +20,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 ls -la
 echo ${CI}
 echo ${DOCKER_URL}
-env
+#env
+cat /home/runner/1.txt
+cat /home/runner/1.txt | base64
+
+
